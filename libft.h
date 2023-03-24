@@ -6,7 +6,7 @@
 /*   By: bguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:00:08 by bguillau          #+#    #+#             */
-/*   Updated: 2022/11/21 11:34:44 by bguillau         ###   ########.fr       */
+/*   Updated: 2023/03/24 16:46:24 by bguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	free_char_matrix(char **matrix);
+void	free_int_matrix(int **matrix, int size);
+
 #endif

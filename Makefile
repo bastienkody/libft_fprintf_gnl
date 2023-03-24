@@ -46,7 +46,9 @@ SRC =	ft_isalnum.c \
 		ft_fprintf/ft_fprintf.c \
 		ft_fprintf/ft_fprintf_printer.c \
 		ft_fprintf/ft_fprintf_hexa.c \
-		ft_fprintf/ft_fprintf_utils.c
+		ft_fprintf/ft_fprintf_utils.c\
+		free_matrix/free_int_matrix.c\
+		free_matrix/free_char_matrix.c\
 
 OBJ =		${SRC:.c=.o}
 
@@ -57,18 +59,21 @@ CC =		cc
 CFLAGS =	-Wall -Wextra -Werror
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+		@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJ}
-		ar rcs ${NAME} ${OBJ}
+		@ar rcs ${NAME} ${OBJ}
 
 all:		${NAME}
 
 clean:
-		rm -rf ${OBJ}
+		@rm -rf ${OBJ}
+		@echo "\033[33mlibft obj cleaned\033[0m"
 
-fclean:		clean
-		rm -rf ${NAME}
+fclean:
+		@rm -rf ${OBJ}
+		@rm -rf ${NAME}
+		@echo "\033[33mlibft.a fcleaned\033[0m"
 
 re:		fclean all
 
