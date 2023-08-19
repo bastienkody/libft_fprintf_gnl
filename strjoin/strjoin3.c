@@ -12,12 +12,7 @@
 
 #include "../libft.h"
 
-/*	join s1 s2 s3
-	f1,f2,f3 : free s1 || s2 || s3
-	fall : free s1 && s2 && s3
-	protected against str=null
-	malloc error are handled in ft_strjoin
-	ret null == malloc err || (s1||s2|s3 == null)	*/
+/*	join 3 str ; null input protected ; malloc error handled in ft_strjoin	*/
 
 char	*strjoin3(char const *s1, char const *s2, char const *s3)
 {

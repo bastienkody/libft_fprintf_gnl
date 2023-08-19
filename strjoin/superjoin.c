@@ -13,13 +13,8 @@
 #include "../libft.h"
 #include <stdarg.h>
 
-/*	join all va strings into malloced ret
-	stops joining when str == null
-	input must be null terminated
-	and if s1==null -> return stdup("")
-	return null on malloc error
-	does not free any va strings	
-*/
+/*	join all va strings ; input must be NULL TERMINATED ! ; does not free
+	if s1==null : return strdup("") ; malloc err : return NULL	*/
 char	*superjoin(char const *s1, ...)
 {
 	va_list	ap;
@@ -56,7 +51,7 @@ char	*superjoin_fall(char const *s1, ...)
 	new = (char *) va_arg(ap, char *);
 	while (new)
 	{
-		ret = strjoin_fall(ret, new); // is it ok to free a va_arg arg?? 
+		ret = strjoin_fall(ret, new);
 		if (!ret)
 			return (NULL);
 		new = (char *) va_arg(ap, char *);
