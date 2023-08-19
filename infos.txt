@@ -1,0 +1,48 @@
+LIBFT 42 fulfilled with usefull functions. C programming language.
+
+To do : 
+	- dossier build pour les .o
+	- ft_realloc
+	- strfind de minishell
+	- strjoin : 
+		- strjoin_f1
+		- strjoin_f2
+		- strjoin_fall
+		- strjoin3_f1
+		- strjoin3_f2
+		- strjoin3_f3
+		- strjoin3_fall
+		- strsuperjoin
+		- strsuperjoin_all
+		- strjoin_one_char
+	- atoi : 
+		- voir en bit shifting
+		- novlf : char, int, long, long long
+		- normal : char, int, long, long long
+	- char_matrix
+		- dup, 
+		- dup +1(at end, via index, after/before specific entry)
+		- dup -1(del_one via entry, via index, via entry evaluated via ptr sur fct)
+		- dup offset (realloc, no new entry)
+		- merge : returns merged from two matrixes
+		- ascendent sort : buble, selection, merge
+		- revert sort
+		- sort via ptr sur fct
+		- find str : return index or ptr
+		- revert rfind str : return index or ptr
+		- count occurence
+		- mapi
+		- iteri
+		- bzero
+	- int_matrix
+		- dup, dup +1, dup -1, dup offset
+		- ascendent sort : buble, selection, merge
+		- revert sort
+		- sort via ptr sur fct
+		- find str : index, ptr
+		- revert rfind str : index, ptr
+		- count occurence
+		- mapi
+		- iteri
+		- bzero
+

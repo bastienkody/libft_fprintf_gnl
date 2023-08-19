@@ -19,6 +19,11 @@
 # include <unistd.h>
 # include "gnl/get_next_line.h"
 # include "ft_fprintf/ft_fprintf.h"
+# include "matrix/matrix.h"
+# include "matrix/char_matrix/char_matrix.h"
+# include "matrix/int_matrix/int_matrix.h"
+# include "atoi/atoi.h"
+# include "strjoin/strjoin.h"
 
 typedef struct s_list
 {
@@ -29,6 +34,7 @@ typedef struct s_list
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
+void	*ft_realloc(void *ptr, size_t size);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
@@ -71,7 +77,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-void	free_char_matrix(char **matrix);
-void	free_int_matrix(int **matrix, int size);
 
 #endif
