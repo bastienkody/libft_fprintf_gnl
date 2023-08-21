@@ -13,18 +13,23 @@
 #include <limits.h>
 #include "../libft.h"
 
-/*	- atoi nptr into nb passed by reference
-	- nb is set to 0
-	- accepts single '+' or single '-'
-	- returns 0 if ovlf ; 1 if ok	*/
+static	int	check_overflow(char nb, char nptr, int sign)
+{
+	char	next_nb;
+
+	if (sign > 0)
+		next_nb = nb * 10 + (nptr - '0');
+	else
+		next_nb = nb * 10 - 1 + (nptr - '0');
+	if (next_nb < nb)
+		return (0);
+	return (1);
+}
 
 int	ft_atoc_novf(const char *nptr, char *nb)
 {
 	int		sign;
-	char	prev_nb;
 
-	if (!ft_strcmp(nptr, CHAR_MIN_STR))
-		return (*nb = -127 -1, 1);
 	sign = 1;
 	if (*nptr == '+' || *nptr == '-')
 	{
@@ -33,13 +38,11 @@ int	ft_atoc_novf(const char *nptr, char *nb)
 		nptr++;
 	}
 	*nb = 0;
-	prev_nb = 0;
 	while (*nptr >= '0' && *nptr <= '9')
 	{
-		*nb = *nb * 10 + (*nptr++ - '0');
-		if (*nb < prev_nb)
+		if (*nb >= (CHAR_MAX / 10) && !check_overflow(*nb, *nptr, sign))
 			return (0);
-		prev_nb = *nb;
+		*nb = *nb * 10 + (*nptr++ - '0');
 	}
 	*nb = *nb * sign;
 	return (1);
